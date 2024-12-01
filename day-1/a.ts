@@ -1,27 +1,30 @@
 import { runSolution } from '../utils.ts';
 
 const output = (a: number[], b: number[]) => {
-  let str = "";
+  let str = '';
   for (let i = 0; i < a.length; i++) {
     str += `${a[i]} ${b[i]}\n`;
   }
 
   console.log(str);
-}
+};
 
 const parseInput = (data: string[]) => {
   // console.log(data);
-  const [a, b] = data.reduce(([a, b], x) => {
-    const spaceAt = x.indexOf(' ');
-    a.push(parseInt(x.slice(0, spaceAt)));
-    b.push(parseInt(x.slice(spaceAt + 1)));
-    return [a, b];
-  }, [[] as number[], [] as number[]]);
+  const [a, b] = data.reduce(
+    ([a, b], x) => {
+      const spaceAt = x.indexOf(' ');
+      a.push(parseInt(x.slice(0, spaceAt)));
+      b.push(parseInt(x.slice(spaceAt + 1)));
+      return [a, b];
+    },
+    [[] as number[], [] as number[]]
+  );
 
   output(a, b);
 
   return [a, b];
-}
+};
 
 const calcDistance = (a: number[], b: number[]) => {
   let sum = 0;
@@ -30,7 +33,7 @@ const calcDistance = (a: number[], b: number[]) => {
     sum += dist;
   }
   return sum;
-}
+};
 
 /** provide your solution as the return of this function */
 export async function day1a(data: string[]) {
