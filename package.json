@@ -5,6 +5,7 @@
   "scripts": {},
   "private": true,
   "dependencies": {
+    "@datastructures-js/priority-queue": "^6.3.1",
     "chalk": "latest",
     "ts-aoc-starter": "2.0.2"
   },
